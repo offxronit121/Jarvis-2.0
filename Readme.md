@@ -1,6 +1,3 @@
-```md
-<div align="center">
-
 # 🦾 JARVIS 2.0
 ### Iron Man-Style 3D Hand Gesture Interface
 
@@ -127,5 +124,3 @@ MIT License — feel free to use and modify.
 Made with ❤️ GAURAV SHISWAR
 </div>
 ```
-
----

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Orbitron", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-hud-cyan: #00F2FF;
+  --color-hud-dim: rgba(0, 242, 255, 0.2);
+  --color-hud-warning: #FF4E00;
+  --color-hud-bg: #05070A;
+
+  @keyframes scan {
+    from { top: 0% }
+    to { top: 100% }
+  }
+}
+
+:root {
+  background-color: var(--color-hud-bg);
+  color: var(--color-hud-cyan);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  user-select: none;
+  font-family: var(--font-sans);
+}
+
+.atmosphere {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, #0c1a26 0%, transparent 70%),
+              radial-gradient(circle at 0% 0%, #111 0%, transparent 40%);
+  z-index: 0;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--color-hud-dim) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--color-hud-dim) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.1;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hud-panel {
+  background: rgba(0, 20, 30, 0.4);
+  border: 1px solid var(--color-hud-dim);
+  backdrop-filter: blur(8px);
+  position: relative;
+}
+
+.hud-panel::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 10px;
+  width: 40px;
+  height: 3px;
+  background: var(--color-hud-cyan);
+}
